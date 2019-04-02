@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1503B3FC2253059A00838C5D /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1503B3FB2253059A00838C5D /* Food.swift */; };
 		151D3D262252EFA600935839 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151D3D252252EFA600935839 /* AppDelegate.swift */; };
 		151D3D282252EFA600935839 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151D3D272252EFA600935839 /* ViewController.swift */; };
 		151D3D2B2252EFA600935839 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 151D3D292252EFA600935839 /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 		151D3D492252EFA900935839 /* fruitableUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151D3D482252EFA900935839 /* fruitableUITests.swift */; };
 		151D3D592252F12C00935839 /* MainListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151D3D582252F12C00935839 /* MainListVC.swift */; };
 		151D3D5B2252F1BA00935839 /* MainListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151D3D5A2252F1BA00935839 /* MainListCell.swift */; };
+		151D3D602252FB5700935839 /* AddFoodVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151D3D5F2252FB5700935839 /* AddFoodVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1503B3FB2253059A00838C5D /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
 		151D3D222252EFA600935839 /* fruitable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fruitable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		151D3D252252EFA600935839 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		151D3D272252EFA600935839 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -53,6 +56,7 @@
 		151D3D4A2252EFA900935839 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		151D3D582252F12C00935839 /* MainListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainListVC.swift; sourceTree = "<group>"; };
 		151D3D5A2252F1BA00935839 /* MainListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainListCell.swift; sourceTree = "<group>"; };
+		151D3D5F2252FB5700935839 /* AddFoodVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFoodVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,15 +107,15 @@
 		151D3D242252EFA600935839 /* fruitable */ = {
 			isa = PBXGroup;
 			children = (
-				151D3D562252F0EE00935839 /* VC */,
-				151D3D572252F11000935839 /* View */,
 				151D3D252252EFA600935839 /* AppDelegate.swift */,
+				151D3D5C2252F3C700935839 /* Model */,
+				151D3D572252F11000935839 /* View */,
+				151D3D562252F0EE00935839 /* VC */,
 				151D3D272252EFA600935839 /* ViewController.swift */,
 				151D3D292252EFA600935839 /* Main.storyboard */,
 				151D3D2F2252EFA900935839 /* Assets.xcassets */,
 				151D3D312252EFA900935839 /* LaunchScreen.storyboard */,
 				151D3D342252EFA900935839 /* Info.plist */,
-				151D3D2C2252EFA600935839 /* fruitable.xcdatamodeld */,
 			);
 			path = fruitable;
 			sourceTree = "<group>";
@@ -138,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				151D3D582252F12C00935839 /* MainListVC.swift */,
+				151D3D5F2252FB5700935839 /* AddFoodVC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -148,6 +153,15 @@
 				151D3D5A2252F1BA00935839 /* MainListCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		151D3D5C2252F3C700935839 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				151D3D2C2252EFA600935839 /* fruitable.xcdatamodeld */,
+				1503B3FB2253059A00838C5D /* Food.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -281,10 +295,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1503B3FC2253059A00838C5D /* Food.swift in Sources */,
 				151D3D2E2252EFA600935839 /* fruitable.xcdatamodeld in Sources */,
 				151D3D592252F12C00935839 /* MainListVC.swift in Sources */,
 				151D3D282252EFA600935839 /* ViewController.swift in Sources */,
 				151D3D262252EFA600935839 /* AppDelegate.swift in Sources */,
+				151D3D602252FB5700935839 /* AddFoodVC.swift in Sources */,
 				151D3D5B2252F1BA00935839 /* MainListCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
