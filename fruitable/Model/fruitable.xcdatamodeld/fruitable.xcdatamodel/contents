@@ -5,8 +5,17 @@
         <attribute name="date" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
         <attribute name="weight" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="foodSpecific" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FoodSpecific" inverseName="food" inverseEntity="FoodSpecific" syncable="YES"/>
+    </entity>
+    <entity name="FoodSpecific" representedClassName=".FoodSpecific" syncable="YES" codeGenerationType="category">
+        <attribute name="cost" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="weight" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="food" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Food" inverseName="foodSpecific" inverseEntity="Food" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Food" positionX="-63" positionY="-18" width="128" height="105"/>
+        <element name="Food" positionX="-72.0390625" positionY="-35.34375" width="141.140625" height="118"/>
+        <element name="FoodSpecific" positionX="180.8828125" positionY="12.453125" width="128" height="118"/>
     </elements>
 </model>

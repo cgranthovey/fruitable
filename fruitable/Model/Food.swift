@@ -11,6 +11,8 @@ import CoreData
 
 class Food: NSManagedObject {
 
+    
+
 //    
 //    init(_name: String, _cost: String, _date: Date, _weight: String){
 //        super.init()

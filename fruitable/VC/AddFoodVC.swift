@@ -20,7 +20,8 @@ class AddFoodVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        let fileManager = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        print("check location ", fileManager.first)
     }
     
     @IBAction func addItemPress(_ sender: AnyObject){
@@ -28,7 +29,7 @@ class AddFoodVC: UIViewController {
         if let cost = tfCost.text, let weight = tfWeight.text, let name = tfName.text{
             print("addItemPress2")
          //   let food = Food.init(name: name, cost: cost, date: Date(), weight: weight)
-            let food = Food()
+            let food = Food.init(context: context)
             print("addItemPress3")
             food.cost = cost
             print("addItemPress3.1")
@@ -55,16 +56,6 @@ class AddFoodVC: UIViewController {
             print("error saving context", error.localizedDescription)
         }
     }
-    
-    
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

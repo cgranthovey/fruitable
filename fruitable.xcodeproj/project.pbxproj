@@ -19,6 +19,11 @@
 		151D3D592252F12C00935839 /* MainListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151D3D582252F12C00935839 /* MainListVC.swift */; };
 		151D3D5B2252F1BA00935839 /* MainListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151D3D5A2252F1BA00935839 /* MainListCell.swift */; };
 		151D3D602252FB5700935839 /* AddFoodVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151D3D5F2252FB5700935839 /* AddFoodVC.swift */; };
+		15E0CA5D2256C90900656659 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E0CA5C2256C90900656659 /* UIColor+.swift */; };
+		15E0CA602256CA0B00656659 /* CommonUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E0CA5F2256CA0B00656659 /* CommonUI.swift */; };
+		15E0CA622256F7D000656659 /* FoodDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E0CA612256F7D000656659 /* FoodDetailsVC.swift */; };
+		15E0CA642256FB6900656659 /* FoodSpecific.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E0CA632256FB6900656659 /* FoodSpecific.swift */; };
+		15E0CA662256FBE700656659 /* FoodSpecificCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E0CA652256FBE700656659 /* FoodSpecificCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +62,11 @@
 		151D3D582252F12C00935839 /* MainListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainListVC.swift; sourceTree = "<group>"; };
 		151D3D5A2252F1BA00935839 /* MainListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainListCell.swift; sourceTree = "<group>"; };
 		151D3D5F2252FB5700935839 /* AddFoodVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFoodVC.swift; sourceTree = "<group>"; };
+		15E0CA5C2256C90900656659 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
+		15E0CA5F2256CA0B00656659 /* CommonUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonUI.swift; sourceTree = "<group>"; };
+		15E0CA612256F7D000656659 /* FoodDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDetailsVC.swift; sourceTree = "<group>"; };
+		15E0CA632256FB6900656659 /* FoodSpecific.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodSpecific.swift; sourceTree = "<group>"; };
+		15E0CA652256FBE700656659 /* FoodSpecificCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodSpecificCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +121,8 @@
 				151D3D5C2252F3C700935839 /* Model */,
 				151D3D572252F11000935839 /* View */,
 				151D3D562252F0EE00935839 /* VC */,
+				15E0CA5B2256C8F400656659 /* Extension */,
+				15E0CA5E2256C9BB00656659 /* Service */,
 				151D3D272252EFA600935839 /* ViewController.swift */,
 				151D3D292252EFA600935839 /* Main.storyboard */,
 				151D3D2F2252EFA900935839 /* Assets.xcassets */,
@@ -143,6 +155,7 @@
 			children = (
 				151D3D582252F12C00935839 /* MainListVC.swift */,
 				151D3D5F2252FB5700935839 /* AddFoodVC.swift */,
+				15E0CA612256F7D000656659 /* FoodDetailsVC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -151,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				151D3D5A2252F1BA00935839 /* MainListCell.swift */,
+				15E0CA652256FBE700656659 /* FoodSpecificCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -160,8 +174,25 @@
 			children = (
 				151D3D2C2252EFA600935839 /* fruitable.xcdatamodeld */,
 				1503B3FB2253059A00838C5D /* Food.swift */,
+				15E0CA632256FB6900656659 /* FoodSpecific.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		15E0CA5B2256C8F400656659 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				15E0CA5C2256C90900656659 /* UIColor+.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		15E0CA5E2256C9BB00656659 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				15E0CA5F2256CA0B00656659 /* CommonUI.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -296,12 +327,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				1503B3FC2253059A00838C5D /* Food.swift in Sources */,
+				15E0CA622256F7D000656659 /* FoodDetailsVC.swift in Sources */,
+				15E0CA5D2256C90900656659 /* UIColor+.swift in Sources */,
 				151D3D2E2252EFA600935839 /* fruitable.xcdatamodeld in Sources */,
 				151D3D592252F12C00935839 /* MainListVC.swift in Sources */,
 				151D3D282252EFA600935839 /* ViewController.swift in Sources */,
 				151D3D262252EFA600935839 /* AppDelegate.swift in Sources */,
+				15E0CA662256FBE700656659 /* FoodSpecificCell.swift in Sources */,
 				151D3D602252FB5700935839 /* AddFoodVC.swift in Sources */,
 				151D3D5B2252F1BA00935839 /* MainListCell.swift in Sources */,
+				15E0CA642256FB6900656659 /* FoodSpecific.swift in Sources */,
+				15E0CA602256CA0B00656659 /* CommonUI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -479,6 +515,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3723XBBGR7;
 				INFOPLIST_FILE = fruitable/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -497,6 +534,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3723XBBGR7;
 				INFOPLIST_FILE = fruitable/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

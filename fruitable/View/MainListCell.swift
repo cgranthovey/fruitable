@@ -10,9 +10,9 @@ import UIKit
 
 class MainListCell: UITableViewCell {
     
-    @IBOutlet weak var lblName: UILabel?
-    @IBOutlet weak var lblCost: UILabel?
-    @IBOutlet weak var lblDate: UILabel?
+    @IBOutlet weak var lblName: UILabel!
+    @IBOutlet weak var lblCost: UILabel!
+    @IBOutlet weak var lblDate: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,8 +25,18 @@ class MainListCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func configure(){
-        
+    func configure(food: Food){
+        if let name = food.name{
+            lblName.text = name
+        }
+        if let cost = food.cost{
+            lblCost.text = cost
+        }
+        if let date = food.date{
+            let formatter = DateFormatter()
+            formatter.dateStyle = .short
+            lblDate.text = formatter.string(from: date)
+        }
     }
 
 }
