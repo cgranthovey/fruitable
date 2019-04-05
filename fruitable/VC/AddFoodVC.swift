@@ -16,42 +16,45 @@ class AddFoodVC: UIViewController {
     @IBOutlet weak var tfWeight: UITextField!
     @IBOutlet weak var tfName: UITextField!
     
+    var passedFoodSpecific: FoodSpecific?
+    var passedFood: Food?
+    
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
     override func viewDidLoad() {
         super.viewDidLoad()
         let fileManager = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        print("check location ", fileManager.first)
+        print("fileManager", fileManager.first)
     }
     
     @IBAction func addItemPress(_ sender: AnyObject){
-        print("addItemPress1")
-        if let cost = tfCost.text, let weight = tfWeight.text, let name = tfName.text{
-            print("addItemPress2")
-         //   let food = Food.init(name: name, cost: cost, date: Date(), weight: weight)
-            let food = Food.init(context: context)
-            print("addItemPress3")
-            food.cost = cost
-            print("addItemPress3.1")
-
-            food.date = Date()
-            print("addItemPress3.2")
-
-            food.weight = weight
-            print("addItemPress3.3")
-
-            food.name = name
-            print("addItemPress4")
-            saveContext()
+        
+        if let passedFood = passedFood{
+            if let cost = tfCost.text, let weight = tfWeight.text, let name = tfName.text{
+                let food = FoodSpecific.init(context: context)
+                food.cost = cost
+                food.date = Date()
+                food.weight = weight
+                food.name = name
+                food.food = passedFood
+                saveContext()
+            }
+        } else{
+            if let cost = tfCost.text, let weight = tfWeight.text, let name = tfName.text{
+                let food = Food.init(context: context)
+                food.cost = cost
+                food.date = Date()
+                food.weight = weight
+                food.name = name
+                saveContext()
+            }
         }
+
     }
     
     func saveContext(){
-        print("save context")
         do{
-        print("save context1")
             try context.save()
-            print("save context2")
         } catch{
             print("error saving context", error.localizedDescription)
         }

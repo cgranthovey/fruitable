@@ -29,9 +29,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="74.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Food" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6c1-vO-x1D">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Food" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6c1-vO-x1D">
                                                     <rect key="frame" x="88" y="24.5" width="53" height="26"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="22"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.54000000000000004" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -42,15 +41,26 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Food" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JGy-Ac-gyS">
+                                                    <rect key="frame" x="15" y="24.5" width="53" height="26"/>
+                                                    <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="22"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="A13-o3-dLJ" firstAttribute="top" secondItem="iK9-vl-koP" secondAttribute="topMargin" constant="5" id="7nX-BI-Vak"/>
+                                                <constraint firstItem="6c1-vO-x1D" firstAttribute="leading" secondItem="JGy-Ac-gyS" secondAttribute="trailing" constant="20" id="AAL-Qg-5Eu"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="A13-o3-dLJ" secondAttribute="trailing" constant="15" id="D44-lj-dz3"/>
+                                                <constraint firstItem="6c1-vO-x1D" firstAttribute="centerY" secondItem="iK9-vl-koP" secondAttribute="centerY" id="Fw6-FN-C8w"/>
+                                                <constraint firstItem="JGy-Ac-gyS" firstAttribute="centerY" secondItem="iK9-vl-koP" secondAttribute="centerY" id="MhQ-rT-KpX"/>
+                                                <constraint firstItem="JGy-Ac-gyS" firstAttribute="leading" secondItem="iK9-vl-koP" secondAttribute="leadingMargin" id="VBk-Nb-Zuh"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="lblCost" destination="6c1-vO-x1D" id="o4I-YK-4nx"/>
                                             <outlet property="lblDate" destination="A13-o3-dLJ" id="Vlx-iq-TJz"/>
+                                            <outlet property="lblName" destination="JGy-Ac-gyS" id="EU1-0l-W35"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -82,7 +92,7 @@
                     <connections>
                         <outlet property="searchBar" destination="5Np-3N-zUI" id="s5M-P5-Bz2"/>
                         <outlet property="tableView" destination="Am8-3t-mfZ" id="3CL-oc-qZ1"/>
-                        <segue destination="iap-TG-GUU" kind="show" id="jgb-Aa-UUh"/>
+                        <segue destination="iap-TG-GUU" kind="show" identifier="FoodDetailsVC" id="jgb-Aa-UUh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -92,7 +102,7 @@
         <!--Food Details-->
         <scene sceneID="m0E-eU-qr9">
             <objects>
-                <viewController title="Food Details" id="iap-TG-GUU" sceneMemberID="viewController">
+                <viewController title="Food Details" id="iap-TG-GUU" customClass="FoodDetailsVC" customModule="fruitable" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CWy-ig-KCh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -107,7 +117,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="zTH-Wp-DkP">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="zTH-Wp-DkP" customClass="FoodSpecificCell" customModule="fruitable" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="170" height="140"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -142,9 +152,21 @@
                                             <constraint firstItem="UBr-Mb-VSF" firstAttribute="top" secondItem="zTH-Wp-DkP" secondAttribute="topMargin" id="eiR-md-dFW"/>
                                             <constraint firstItem="UBr-Mb-VSF" firstAttribute="centerX" secondItem="zTH-Wp-DkP" secondAttribute="centerX" id="khM-Xx-mQc"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="costLbl" destination="Ln8-Qg-GTQ" id="rQM-GT-Hrj"/>
+                                            <outlet property="dateLbl" destination="dpv-XC-hZ9" id="Y90-ut-fYV"/>
+                                            <outlet property="nameLbl" destination="UBr-Mb-VSF" id="XPi-Vh-Gyu"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5tK-tm-e6C">
+                                <rect key="frame" x="16" y="33" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Title" id="LOh-Lz-RFA"/>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -155,6 +177,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3Kg-bc-SxL"/>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="Vd5-RT-p6z" id="WYv-Yg-ePe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v1c-Bo-okm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -163,7 +188,7 @@
         <!--Add-->
         <scene sceneID="O2J-Ap-NN6">
             <objects>
-                <viewController title="Add" id="hAT-oh-kZ8" customClass="AddFoodVC" customModule="fruitable" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddFoodVC" title="Add" id="hAT-oh-kZ8" customClass="AddFoodVC" customModule="fruitable" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8rl-vM-eCg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

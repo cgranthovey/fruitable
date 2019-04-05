@@ -41,8 +41,8 @@ class MainListVC: UIViewController {
                 let btn = UIButton(type: .system)
                 btn.setTitle("Add First Item", for: .normal)
                 btn.titleLabel?.font = UIFont(name: "Menlo", size: 22)
-                let color = 
-                btn.tintColor = UIColor().getColor(red: 255, green: 91, blue: 71, alpha: 1).cgColor
+                let color = UIColor().getColor(red: 255, green: 91, blue: 71, alpha: 1)
+                btn.tintColor = color
                 tableView.backgroundView = btn
                 tableView.separatorStyle = .none
             }
@@ -95,6 +95,18 @@ extension MainListVC: UITableViewDelegate{
             saveContext()
             foods.remove(at: indexPath.row)
             tableView.deleteRows(at: [IndexPath(row: indexPath.row, section: 0)], with: .bottom)
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "FoodDetailsVC", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "FoodDetailsVC"{
+            if let vc = segue.destination as? FoodDetailsVC, let indexSelected = tableView.indexPathForSelectedRow{
+                vc.passedFood = foods[indexSelected.row]
+            }
         }
     }
 }
