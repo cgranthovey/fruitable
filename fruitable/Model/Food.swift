@@ -12,6 +12,10 @@ import CoreData
 class Food: NSManagedObject {
 
     
+    func configure(name: String, assetName: String? = nil){
+        self.name = name
+        self.assetName = assetName
+    }
 
 //    
 //    init(_name: String, _cost: String, _date: Date, _weight: String){

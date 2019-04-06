@@ -15,6 +15,13 @@ class CommonUI {
         return _instance
     }
     
-    
-    
+    var bananaYellow: UIColor{
+        return UIColor().getColor(red: 255, green: 225, blue: 53, alpha: 1)
+    }
+    var tomatoRed: UIColor{
+         return UIColor().getColor(red: 255, green: 91, blue: 71, alpha: 1)
+    }
+    var lightGray: UIColor{
+        return UIColor().getColor(red: 240, green: 240, blue: 240, alpha: 1)
+    }
 }

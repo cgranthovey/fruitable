@@ -11,7 +11,6 @@ import CoreData
 
 class AddFoodVC: UIViewController {
     
-    @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var tfCost: UITextField!
     @IBOutlet weak var tfWeight: UITextField!
     @IBOutlet weak var tfName: UITextField!
@@ -25,6 +24,13 @@ class AddFoodVC: UIViewController {
         super.viewDidLoad()
         let fileManager = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         print("fileManager", fileManager.first)
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(dropKB))
+        self.view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dropKB(){
+        self.view.endEditing(true)
     }
     
     @IBAction func addItemPress(_ sender: AnyObject){
@@ -36,15 +42,14 @@ class AddFoodVC: UIViewController {
                 food.date = Date()
                 food.weight = weight
                 food.name = name
+                print("the passed food set", passedFood)
                 food.food = passedFood
                 saveContext()
+                self.navigationController?.popViewController(animated: true)
             }
         } else{
             if let cost = tfCost.text, let weight = tfWeight.text, let name = tfName.text{
                 let food = Food.init(context: context)
-                food.cost = cost
-                food.date = Date()
-                food.weight = weight
                 food.name = name
                 saveContext()
             }

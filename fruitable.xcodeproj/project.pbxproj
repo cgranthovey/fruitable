@@ -9,21 +9,21 @@
 /* Begin PBXBuildFile section */
 		1503B3FC2253059A00838C5D /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1503B3FB2253059A00838C5D /* Food.swift */; };
 		151D3D262252EFA600935839 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151D3D252252EFA600935839 /* AppDelegate.swift */; };
-		151D3D282252EFA600935839 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151D3D272252EFA600935839 /* ViewController.swift */; };
 		151D3D2B2252EFA600935839 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 151D3D292252EFA600935839 /* Main.storyboard */; };
 		151D3D2E2252EFA600935839 /* fruitable.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 151D3D2C2252EFA600935839 /* fruitable.xcdatamodeld */; };
 		151D3D302252EFA900935839 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 151D3D2F2252EFA900935839 /* Assets.xcassets */; };
 		151D3D332252EFA900935839 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 151D3D312252EFA900935839 /* LaunchScreen.storyboard */; };
 		151D3D3E2252EFA900935839 /* fruitableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151D3D3D2252EFA900935839 /* fruitableTests.swift */; };
 		151D3D492252EFA900935839 /* fruitableUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151D3D482252EFA900935839 /* fruitableUITests.swift */; };
-		151D3D592252F12C00935839 /* MainListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151D3D582252F12C00935839 /* MainListVC.swift */; };
-		151D3D5B2252F1BA00935839 /* MainListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151D3D5A2252F1BA00935839 /* MainListCell.swift */; };
 		151D3D602252FB5700935839 /* AddFoodVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151D3D5F2252FB5700935839 /* AddFoodVC.swift */; };
+		15D82DD322584A4B00316E9D /* FoodGeneralVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D82DD222584A4B00316E9D /* FoodGeneralVC.swift */; };
+		15D82DD522584BCE00316E9D /* FoodGeneralCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D82DD422584BCE00316E9D /* FoodGeneralCell.swift */; };
+		15D82DD722591A6500316E9D /* DefaultFood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D82DD622591A6500316E9D /* DefaultFood.swift */; };
+		15D82DD92259391100316E9D /* FoodDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D82DD82259391100316E9D /* FoodDetailVC.swift */; };
+		15D82DDB22593A6800316E9D /* FoodSpecificCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D82DDA22593A6800316E9D /* FoodSpecificCell.swift */; };
 		15E0CA5D2256C90900656659 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E0CA5C2256C90900656659 /* UIColor+.swift */; };
 		15E0CA602256CA0B00656659 /* CommonUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E0CA5F2256CA0B00656659 /* CommonUI.swift */; };
-		15E0CA622256F7D000656659 /* FoodDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E0CA612256F7D000656659 /* FoodDetailsVC.swift */; };
 		15E0CA642256FB6900656659 /* FoodSpecific.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E0CA632256FB6900656659 /* FoodSpecific.swift */; };
-		15E0CA662256FBE700656659 /* FoodSpecificCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E0CA652256FBE700656659 /* FoodSpecificCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,7 +47,6 @@
 		1503B3FB2253059A00838C5D /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
 		151D3D222252EFA600935839 /* fruitable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fruitable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		151D3D252252EFA600935839 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		151D3D272252EFA600935839 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		151D3D2A2252EFA600935839 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		151D3D2D2252EFA600935839 /* fruitable.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = fruitable.xcdatamodel; sourceTree = "<group>"; };
 		151D3D2F2252EFA900935839 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -59,14 +58,15 @@
 		151D3D442252EFA900935839 /* fruitableUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = fruitableUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		151D3D482252EFA900935839 /* fruitableUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fruitableUITests.swift; sourceTree = "<group>"; };
 		151D3D4A2252EFA900935839 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		151D3D582252F12C00935839 /* MainListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainListVC.swift; sourceTree = "<group>"; };
-		151D3D5A2252F1BA00935839 /* MainListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainListCell.swift; sourceTree = "<group>"; };
 		151D3D5F2252FB5700935839 /* AddFoodVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFoodVC.swift; sourceTree = "<group>"; };
+		15D82DD222584A4B00316E9D /* FoodGeneralVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodGeneralVC.swift; sourceTree = "<group>"; };
+		15D82DD422584BCE00316E9D /* FoodGeneralCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodGeneralCell.swift; sourceTree = "<group>"; };
+		15D82DD622591A6500316E9D /* DefaultFood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultFood.swift; sourceTree = "<group>"; };
+		15D82DD82259391100316E9D /* FoodDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDetailVC.swift; sourceTree = "<group>"; };
+		15D82DDA22593A6800316E9D /* FoodSpecificCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodSpecificCell.swift; sourceTree = "<group>"; };
 		15E0CA5C2256C90900656659 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		15E0CA5F2256CA0B00656659 /* CommonUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonUI.swift; sourceTree = "<group>"; };
-		15E0CA612256F7D000656659 /* FoodDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDetailsVC.swift; sourceTree = "<group>"; };
 		15E0CA632256FB6900656659 /* FoodSpecific.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodSpecific.swift; sourceTree = "<group>"; };
-		15E0CA652256FBE700656659 /* FoodSpecificCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodSpecificCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,7 +123,6 @@
 				151D3D562252F0EE00935839 /* VC */,
 				15E0CA5B2256C8F400656659 /* Extension */,
 				15E0CA5E2256C9BB00656659 /* Service */,
-				151D3D272252EFA600935839 /* ViewController.swift */,
 				151D3D292252EFA600935839 /* Main.storyboard */,
 				151D3D2F2252EFA900935839 /* Assets.xcassets */,
 				151D3D312252EFA900935839 /* LaunchScreen.storyboard */,
@@ -153,9 +152,9 @@
 		151D3D562252F0EE00935839 /* VC */ = {
 			isa = PBXGroup;
 			children = (
-				151D3D582252F12C00935839 /* MainListVC.swift */,
 				151D3D5F2252FB5700935839 /* AddFoodVC.swift */,
-				15E0CA612256F7D000656659 /* FoodDetailsVC.swift */,
+				15D82DD222584A4B00316E9D /* FoodGeneralVC.swift */,
+				15D82DD82259391100316E9D /* FoodDetailVC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -163,8 +162,8 @@
 		151D3D572252F11000935839 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				151D3D5A2252F1BA00935839 /* MainListCell.swift */,
-				15E0CA652256FBE700656659 /* FoodSpecificCell.swift */,
+				15D82DD422584BCE00316E9D /* FoodGeneralCell.swift */,
+				15D82DDA22593A6800316E9D /* FoodSpecificCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -191,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				15E0CA5F2256CA0B00656659 /* CommonUI.swift */,
+				15D82DD622591A6500316E9D /* DefaultFood.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -327,16 +327,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				1503B3FC2253059A00838C5D /* Food.swift in Sources */,
-				15E0CA622256F7D000656659 /* FoodDetailsVC.swift in Sources */,
+				15D82DD322584A4B00316E9D /* FoodGeneralVC.swift in Sources */,
 				15E0CA5D2256C90900656659 /* UIColor+.swift in Sources */,
 				151D3D2E2252EFA600935839 /* fruitable.xcdatamodeld in Sources */,
-				151D3D592252F12C00935839 /* MainListVC.swift in Sources */,
-				151D3D282252EFA600935839 /* ViewController.swift in Sources */,
 				151D3D262252EFA600935839 /* AppDelegate.swift in Sources */,
-				15E0CA662256FBE700656659 /* FoodSpecificCell.swift in Sources */,
+				15D82DD722591A6500316E9D /* DefaultFood.swift in Sources */,
 				151D3D602252FB5700935839 /* AddFoodVC.swift in Sources */,
-				151D3D5B2252F1BA00935839 /* MainListCell.swift in Sources */,
+				15D82DDB22593A6800316E9D /* FoodSpecificCell.swift in Sources */,
 				15E0CA642256FB6900656659 /* FoodSpecific.swift in Sources */,
+				15D82DD92259391100316E9D /* FoodDetailVC.swift in Sources */,
+				15D82DD522584BCE00316E9D /* FoodGeneralCell.swift in Sources */,
 				15E0CA602256CA0B00656659 /* CommonUI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
