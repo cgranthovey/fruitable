@@ -41,5 +41,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>Camera needed to store your personal food images.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Photo Library needed to add your personal food photos.</string>
 </dict>
 </plist>

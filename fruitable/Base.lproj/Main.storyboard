@@ -21,6 +21,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Am8-3t-mfZ">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="95" id="wsl-6F-tug" customClass="FoodSpecificCell" customModule="fruitable" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="95"/>
@@ -65,13 +66,20 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.10000000000000001" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="apple" translatesAutoresizingMaskIntoConstraints="NO" id="1xM-o3-ANl">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1xM-o3-ANl" secondAttribute="trailing" id="SR3-bk-zMZ"/>
                             <constraint firstItem="Am8-3t-mfZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="cOG-Zw-0k0"/>
                             <constraint firstItem="Am8-3t-mfZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="dyH-fR-ygz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="1xM-o3-ANl" secondAttribute="bottom" id="oB2-XB-hbT"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Am8-3t-mfZ" secondAttribute="bottom" id="oVk-Px-Hcw"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Am8-3t-mfZ" secondAttribute="trailing" id="tS0-mH-dxS"/>
+                            <constraint firstItem="1xM-o3-ANl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="uC4-wv-mXd"/>
+                            <constraint firstItem="1xM-o3-ANl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ykA-he-lrC"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -83,6 +91,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="bgImageView" destination="1xM-o3-ANl" id="5kw-jX-6IU"/>
                         <outlet property="tableView" destination="Am8-3t-mfZ" id="NIY-lU-VlK"/>
                     </connections>
                 </viewController>
@@ -108,7 +117,7 @@
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vMa-Ud-tHr">
                                         <rect key="frame" x="183.5" y="3" width="8.5" height="39"/>
@@ -123,7 +132,7 @@
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -153,7 +162,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GbP-BS-AmV">
                                 <rect key="frame" x="50" y="602" width="275" height="45"/>
@@ -218,6 +227,79 @@
             </objects>
             <point key="canvasLocation" x="252" y="320"/>
         </scene>
+        <!--Add Food-->
+        <scene sceneID="6L5-vO-sPs">
+            <objects>
+                <viewController title="Add Food" id="Jao-Jh-dLc" customClass="AddFoodGeneralVC" customModule="fruitable" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="By1-7M-6Kz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4cC-fO-BAP">
+                                <rect key="frame" x="50" y="94" width="275" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="kLe-P0-4f7"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XWj-YD-QcO">
+                                <rect key="frame" x="141" y="164" width="93" height="32"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
+                                <state key="normal" title="Add Image">
+                                    <color key="titleColor" red="1" green="0.38823529410000002" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="addImageBtnPress:" destination="Jao-Jh-dLc" eventType="touchUpInside" id="3yH-gD-m65"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8QI-H0-bPp">
+                                <rect key="frame" x="50" y="602" width="275" height="45"/>
+                                <color key="backgroundColor" red="1" green="0.38823529410000002" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="5eN-Sf-d1e"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="22"/>
+                                <state key="normal" title="ADD">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="addItemPress:" destination="hAT-oh-kZ8" eventType="touchUpInside" id="6aH-pt-NxK"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5YG-Mp-IU5">
+                                <rect key="frame" x="67.5" y="221" width="240" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="rW9-Av-IKP"/>
+                                    <constraint firstAttribute="height" constant="150" id="zsB-O1-1wv"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="8QI-H0-bPp" firstAttribute="leading" secondItem="By1-7M-6Kz" secondAttribute="leading" constant="50" id="1IG-xd-H7X"/>
+                            <constraint firstItem="4cC-fO-BAP" firstAttribute="leading" secondItem="2aa-fa-1ul" secondAttribute="leading" constant="50" id="1oK-Su-36D"/>
+                            <constraint firstItem="2aa-fa-1ul" firstAttribute="trailing" secondItem="8QI-H0-bPp" secondAttribute="trailing" constant="50" id="EHf-Gy-8eo"/>
+                            <constraint firstItem="XWj-YD-QcO" firstAttribute="centerX" secondItem="By1-7M-6Kz" secondAttribute="centerX" id="Jn8-OS-ajL"/>
+                            <constraint firstItem="5YG-Mp-IU5" firstAttribute="top" secondItem="XWj-YD-QcO" secondAttribute="bottom" constant="25" id="ZFh-dv-jzZ"/>
+                            <constraint firstItem="4cC-fO-BAP" firstAttribute="top" secondItem="2aa-fa-1ul" secondAttribute="top" constant="30" id="lZm-8Q-6he"/>
+                            <constraint firstItem="XWj-YD-QcO" firstAttribute="top" secondItem="4cC-fO-BAP" secondAttribute="bottom" constant="25" id="ozk-W6-4d5"/>
+                            <constraint firstItem="2aa-fa-1ul" firstAttribute="bottom" secondItem="8QI-H0-bPp" secondAttribute="bottom" constant="20" id="pDZ-xE-wLE"/>
+                            <constraint firstItem="5YG-Mp-IU5" firstAttribute="centerX" secondItem="By1-7M-6Kz" secondAttribute="centerX" id="t7F-Ug-hjr"/>
+                            <constraint firstItem="2aa-fa-1ul" firstAttribute="trailing" secondItem="4cC-fO-BAP" secondAttribute="trailing" constant="50" id="wmr-qt-k1Y"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="2aa-fa-1ul"/>
+                    </view>
+                    <connections>
+                        <outlet property="imgView" destination="5YG-Mp-IU5" id="HK1-58-W2e"/>
+                        <outlet property="tfName" destination="4cC-fO-BAP" id="Uem-ov-udq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Jb-3f-xXp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1092" y="-356"/>
+        </scene>
         <!--Fruitable-->
         <scene sceneID="ks7-e4-ceU">
             <objects>
@@ -280,7 +362,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mcT-k1-OpN"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Fruitable" id="VIM-IH-kfR"/>
+                    <navigationItem key="navigationItem" title="Fruitable" id="VIM-IH-kfR">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ALZ-yO-euD">
+                            <connections>
+                                <segue destination="Jao-Jh-dLc" kind="show" id="hnf-Fq-9ES"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="iyv-Ut-4as" id="hZG-cv-oK0"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="FoodDetailVC" id="hMb-4l-uB8"/>
@@ -291,4 +379,7 @@
             <point key="canvasLocation" x="1092" y="321.58920539730138"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="apple" width="512" height="512"/>
+    </resources>
 </document>

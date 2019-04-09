@@ -52,7 +52,7 @@ class DefaultFood{
         let lemon = Food(context: context)
         lemon.configure(name: "Lemon", assetName: "lemon")
         let mango = Food(context: context)
-        mango.configure(name: "mango", assetName: "mango")
+        mango.configure(name: "Mango", assetName: "mango")
         let mushroom = Food(context: context)
         mushroom.configure(name: "Mushroom", assetName: "mushroom")
         

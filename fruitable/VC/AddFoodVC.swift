@@ -15,6 +15,7 @@ class AddFoodVC: UIViewController {
     @IBOutlet weak var tfWeight: UITextField!
     @IBOutlet weak var tfName: UITextField!
     
+    
     var passedFoodSpecific: FoodSpecific?
     var passedFood: Food?
     
@@ -22,11 +23,22 @@ class AddFoodVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tfCost.delegate = self
+        tfWeight.delegate = self
+        tfName.delegate = self
+        
         let fileManager = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         print("fileManager", fileManager.first)
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(dropKB))
         self.view.addGestureRecognizer(tap)
+        if let name = passedFood?.name{
+            title = "Add \(name)"
+        }
+        
+        tfCost.addTarget(self, action: #selector(textFieldDidChangeCurrency(_:)), for: .editingChanged)
+
     }
     
     @objc func dropKB(){
@@ -64,6 +76,18 @@ class AddFoodVC: UIViewController {
             print("error saving context", error.localizedDescription)
         }
     }
+    
+    @objc func textFieldDidChangeCurrency(_ textField: UITextField){
+        if let currencyFormat = textField.text?.currencyInputFormatting(){
+            textField.text = currencyFormat
+        }
+    }
 
+
+}
+
+extension AddFoodVC: UITextFieldDelegate{
+
+    
 
 }

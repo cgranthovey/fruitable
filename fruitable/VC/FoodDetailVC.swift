@@ -12,6 +12,8 @@ import CoreData
 class FoodDetailVC: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var bgImageView: UIImageView!
+
     var foodSpecifics = [FoodSpecific]()
     var passedFood: Food? = nil
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -28,7 +30,12 @@ class FoodDetailVC: UIViewController {
             title = name
         }
         
-        
+        if let imageAsset = passedFood?.assetName{
+            bgImageView.image = UIImage(named: imageAsset)
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         getData()
     }
     
@@ -63,6 +70,16 @@ class FoodDetailVC: UIViewController {
                 addBtn.addTarget(self, action: #selector(addItemPress), for: .touchUpInside)
                 bgView.addSubview(addBtn)
                 tableView.backgroundView = bgView
+                
+                addBtn.transform = CGAffineTransform(translationX: 0, y: 20)
+                addBtn.alpha = 0
+                UIView.animate(withDuration: 0.4, delay: 0.2, options: .curveEaseOut, animations: {
+                    print("transform")
+                    addBtn.transform = .identity
+                    addBtn.alpha = 1
+                }, completion: nil)
+            } else{
+                tableView.backgroundView = nil
             }
             
             tableView.reloadData()
