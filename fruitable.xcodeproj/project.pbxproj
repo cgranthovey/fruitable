@@ -26,6 +26,7 @@
 		15E0CA5D2256C90900656659 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E0CA5C2256C90900656659 /* UIColor+.swift */; };
 		15E0CA602256CA0B00656659 /* CommonUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E0CA5F2256CA0B00656659 /* CommonUI.swift */; };
 		15E0CA642256FB6900656659 /* FoodSpecific.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E0CA632256FB6900656659 /* FoodSpecific.swift */; };
+		15F104CC225C355C000C1FAD /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F104CB225C355C000C1FAD /* UIView+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		15E0CA5C2256C90900656659 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		15E0CA5F2256CA0B00656659 /* CommonUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonUI.swift; sourceTree = "<group>"; };
 		15E0CA632256FB6900656659 /* FoodSpecific.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodSpecific.swift; sourceTree = "<group>"; };
+		15F104CB225C355C000C1FAD /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,10 +158,10 @@
 		151D3D562252F0EE00935839 /* VC */ = {
 			isa = PBXGroup;
 			children = (
-				151D3D5F2252FB5700935839 /* AddFoodVC.swift */,
 				15D82DD222584A4B00316E9D /* FoodGeneralVC.swift */,
-				15D82DD82259391100316E9D /* FoodDetailVC.swift */,
 				158E728522596EF20022A935 /* AddFoodGeneralVC.swift */,
+				15D82DD82259391100316E9D /* FoodDetailVC.swift */,
+				151D3D5F2252FB5700935839 /* AddFoodVC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -188,6 +190,7 @@
 			children = (
 				15E0CA5C2256C90900656659 /* UIColor+.swift */,
 				158E7283225966B60022A935 /* String+.swift */,
+				15F104CB225C355C000C1FAD /* UIView+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -343,6 +346,7 @@
 				15E0CA642256FB6900656659 /* FoodSpecific.swift in Sources */,
 				15D82DD92259391100316E9D /* FoodDetailVC.swift in Sources */,
 				158E7284225966B60022A935 /* String+.swift in Sources */,
+				15F104CC225C355C000C1FAD /* UIView+.swift in Sources */,
 				158E728622596EF20022A935 /* AddFoodGeneralVC.swift in Sources */,
 				15D82DD522584BCE00316E9D /* FoodGeneralCell.swift in Sources */,
 				15E0CA602256CA0B00656659 /* CommonUI.swift in Sources */,

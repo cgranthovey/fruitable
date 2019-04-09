@@ -23,9 +23,16 @@ class FoodSpecificCell: UITableViewCell {
         if let name = foodSpecific.name{
             nameLbl.text = name
         }
+        
+        var costStr = ""
         if let cost = foodSpecific.cost{
-            costLbl.text = cost
+            costStr = cost
         }
+        if let weight = foodSpecific.weight{
+            costStr += " / \(weight)"
+        }
+        costLbl.text = costStr
+        
         if let date = foodSpecific.date{
             let formatter = DateFormatter()
             formatter.dateStyle = .medium

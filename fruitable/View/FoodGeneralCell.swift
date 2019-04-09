@@ -29,6 +29,7 @@ class FoodGeneralCell: UICollectionViewCell {
             imageView.image = UIImage(named: assetName)
         } else if let imageFilePath = food.imageFilePath, let docURL = documentsURL{
             let fileURL = docURL.appendingPathComponent(imageFilePath)
+
             do {
                 let data = try Data(contentsOf: fileURL)
                 imageView.image = UIImage(data: data)
@@ -36,6 +37,8 @@ class FoodGeneralCell: UICollectionViewCell {
                 print("error getting image", error.localizedDescription)
             }
             
+        } else{
+            imageView.image = nil
         }
     }
     

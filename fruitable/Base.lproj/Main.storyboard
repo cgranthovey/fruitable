@@ -72,8 +72,8 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="Am8-3t-mfZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="4hb-2v-LBV"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1xM-o3-ANl" secondAttribute="trailing" id="SR3-bk-zMZ"/>
-                            <constraint firstItem="Am8-3t-mfZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="cOG-Zw-0k0"/>
                             <constraint firstItem="Am8-3t-mfZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="dyH-fR-ygz"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="1xM-o3-ANl" secondAttribute="bottom" id="oB2-XB-hbT"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Am8-3t-mfZ" secondAttribute="bottom" id="oVk-Px-Hcw"/>
@@ -125,7 +125,7 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.54000000000000004" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Qty or Weight" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="N5t-l0-ZdO">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Qty/Weight" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="N5t-l0-ZdO">
                                         <rect key="frame" x="212" y="0.0" width="143" height="45"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="8id-wp-wtV"/>
@@ -155,7 +155,7 @@
                                     <constraint firstAttribute="height" constant="1" id="JPg-Yt-dCS"/>
                                 </constraints>
                             </view>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aEk-T9-bTV">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Subgroup/Location" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aEk-T9-bTV">
                                 <rect key="frame" x="50" y="94" width="275" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="L7y-CH-xXN"/>
@@ -199,6 +199,7 @@
                         <viewLayoutGuide key="safeArea" id="sEl-lV-mPb"/>
                     </view>
                     <connections>
+                        <outlet property="btnAdd" destination="GbP-BS-AmV" id="ulW-c0-ZqK"/>
                         <outlet property="tfCost" destination="Uv3-Zp-grb" id="apd-zP-bwc"/>
                         <outlet property="tfName" destination="aEk-T9-bTV" id="ysE-jx-ypC"/>
                         <outlet property="tfWeight" destination="N5t-l0-ZdO" id="kV1-lF-0oa"/>
@@ -254,6 +255,13 @@
                                     <action selector="addImageBtnPress:" destination="Jao-Jh-dLc" eventType="touchUpInside" id="3yH-gD-m65"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5YG-Mp-IU5">
+                                <rect key="frame" x="67.5" y="221" width="240" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="rW9-Av-IKP"/>
+                                    <constraint firstAttribute="height" constant="150" id="zsB-O1-1wv"/>
+                                </constraints>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8QI-H0-bPp">
                                 <rect key="frame" x="50" y="602" width="275" height="45"/>
                                 <color key="backgroundColor" red="1" green="0.38823529410000002" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
@@ -265,16 +273,10 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
+                                    <action selector="addBtnPress:" destination="Jao-Jh-dLc" eventType="touchUpInside" id="iVp-Oq-oGP"/>
                                     <action selector="addItemPress:" destination="hAT-oh-kZ8" eventType="touchUpInside" id="6aH-pt-NxK"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5YG-Mp-IU5">
-                                <rect key="frame" x="67.5" y="221" width="240" height="150"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="rW9-Av-IKP"/>
-                                    <constraint firstAttribute="height" constant="150" id="zsB-O1-1wv"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -292,6 +294,7 @@
                         <viewLayoutGuide key="safeArea" id="2aa-fa-1ul"/>
                     </view>
                     <connections>
+                        <outlet property="btnAdd" destination="8QI-H0-bPp" id="VTy-XM-una"/>
                         <outlet property="imgView" destination="5YG-Mp-IU5" id="HK1-58-W2e"/>
                         <outlet property="tfName" destination="4cC-fO-BAP" id="Uem-ov-udq"/>
                     </connections>

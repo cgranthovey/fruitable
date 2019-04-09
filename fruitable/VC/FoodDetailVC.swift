@@ -32,6 +32,20 @@ class FoodDetailVC: UIViewController {
         
         if let imageAsset = passedFood?.assetName{
             bgImageView.image = UIImage(named: imageAsset)
+        } else if let path = passedFood?.imageFilePath, let url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first{
+            let url = url.appendingPathComponent(path)
+            do {
+                let data = try Data(contentsOf: url)
+                if let image = UIImage(data: data){
+                    bgImageView.image = image
+                }
+            } catch{
+                print("test", error.localizedDescription)
+            }
+            
+
+        } else{
+            bgImageView.image = nil
         }
     }
     
@@ -46,6 +60,8 @@ class FoodDetailVC: UIViewController {
             }
         }
     }
+    
+    //MARK: - Get/Save Data
     
     func getData(){
         guard let passedFood = passedFood else{
@@ -88,6 +104,14 @@ class FoodDetailVC: UIViewController {
         }
     }
     
+    func saveData(){
+        do{
+            try context.save()
+        } catch{
+            print("error saving data", error.localizedDescription)
+        }
+    }
+    
     @objc func addItemPress(){
         performSegue(withIdentifier: "AddFoodVC", sender: nil)
     }
@@ -113,6 +137,14 @@ extension FoodDetailVC: UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 85
+    }
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete{
+            context.delete(foodSpecifics[indexPath.row])
+            saveData()
+            foodSpecifics.remove(at: indexPath.row)
+            tableView.deleteRows(at: [IndexPath(row: indexPath.row, section: 0)], with: .bottom)
+        }
     }
 }
 
