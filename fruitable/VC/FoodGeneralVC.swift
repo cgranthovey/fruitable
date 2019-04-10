@@ -166,9 +166,7 @@ extension FoodGeneralVC: AddFoodGeneralVCDelegate{
         foods.insert(food, at: 0)
         foods.sort { (food1, food2) -> Bool in
             if let name1 = food1.name, let name2 = food2.name{
-                print("names12")
                 return name1 < name2
-                
             }
             return false
         }
@@ -179,7 +177,5 @@ extension FoodGeneralVC: AddFoodGeneralVCDelegate{
                 collectionView.scrollToItem(at: IndexPath(row: index, section: 0), at: .top, animated: true)
             }
         }
-        
-        
     }
 }
