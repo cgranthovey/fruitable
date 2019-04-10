@@ -22,6 +22,8 @@ class FoodDetailVC: UIViewController {
         super.viewDidLoad()
         
         print("my files ", FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+
 
         tableView.delegate = self
         tableView.dataSource = self

@@ -34,12 +34,11 @@ class FoodGeneralVC: UIViewController {
 //        navigationItem.hidesSearchBarWhenScrolling = false
         navigationItem.searchController?.searchBar.delegate = self
         
-        let tap = UITapGestureRecognizer(target: self, action: #selector(dropKB))
-//        self.navigationController?.navigationBar.gestureRecognizerShouldBegin(tap)
+        getData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        getData()
+        
     }
     
     func firstTimeLoading(){
@@ -51,6 +50,17 @@ class FoodGeneralVC: UIViewController {
     
     @objc func dropKB(){
         self.view.endEditing(true)
+    }
+    
+    //MARK: - IBActions
+    @IBAction func addFoodBtnPress(_ sender: AnyObject){
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        print("addFoodBtnPress1")
+        if let vc = storyboard.instantiateViewController(withIdentifier: "AddFoodGeneralVC") as? AddFoodGeneralVC{
+            print("addFoodBtnPress2")
+            self.navigationController?.pushViewController(vc, animated: true)
+            vc.delegate = self
+        }
     }
     
     //MARK: - Get Data
@@ -148,5 +158,28 @@ extension FoodGeneralVC: UISearchBarDelegate{
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.endEditing(true)
+    }
+}
+
+extension FoodGeneralVC: AddFoodGeneralVCDelegate{
+    func getFoodAdded(food: Food){
+        foods.insert(food, at: 0)
+        foods.sort { (food1, food2) -> Bool in
+            if let name1 = food1.name, let name2 = food2.name{
+                print("names12")
+                return name1 < name2
+                
+            }
+            return false
+        }
+        collectionView.reloadData()
+        
+        for (index, item) in foods.enumerated(){
+            if item.name == food.name{
+                collectionView.scrollToItem(at: IndexPath(row: index, section: 0), at: .top, animated: true)
+            }
+        }
+        
+        
     }
 }

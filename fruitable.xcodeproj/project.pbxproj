@@ -523,7 +523,7 @@
 		151D3D4E2252EFA900935839 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3723XBBGR7;
 				INFOPLIST_FILE = fruitable/Info.plist;
@@ -542,7 +542,7 @@
 		151D3D4F2252EFA900935839 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3723XBBGR7;
 				INFOPLIST_FILE = fruitable/Info.plist;

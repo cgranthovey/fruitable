@@ -18,6 +18,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zwk-7D-G6J">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Am8-3t-mfZ">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -67,19 +71,23 @@
                                 </prototypes>
                             </tableView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.10000000000000001" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="apple" translatesAutoresizingMaskIntoConstraints="NO" id="1xM-o3-ANl">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="79" width="375" height="573"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Am8-3t-mfZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="4hb-2v-LBV"/>
+                            <constraint firstItem="zwk-7D-G6J" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="0Dc-fZ-bRG"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="zwk-7D-G6J" secondAttribute="bottom" id="EIF-UZ-DGw"/>
+                            <constraint firstItem="Am8-3t-mfZ" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="EJs-Uc-ANL"/>
+                            <constraint firstItem="1xM-o3-ANl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="Mxn-Kc-CSq"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zwk-7D-G6J" secondAttribute="trailing" id="Nk9-nj-qdt"/>
+                            <constraint firstItem="zwk-7D-G6J" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="RFU-hX-4Ab"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1xM-o3-ANl" secondAttribute="trailing" id="SR3-bk-zMZ"/>
+                            <constraint firstItem="Am8-3t-mfZ" firstAttribute="height" secondItem="zwk-7D-G6J" secondAttribute="height" id="WCc-y4-Lp0"/>
                             <constraint firstItem="Am8-3t-mfZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="dyH-fR-ygz"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="1xM-o3-ANl" secondAttribute="bottom" id="oB2-XB-hbT"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Am8-3t-mfZ" secondAttribute="bottom" id="oVk-Px-Hcw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="1xM-o3-ANl" secondAttribute="bottom" constant="15" id="sgH-79-X04"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Am8-3t-mfZ" secondAttribute="trailing" id="tS0-mH-dxS"/>
                             <constraint firstItem="1xM-o3-ANl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="uC4-wv-mXd"/>
-                            <constraint firstItem="1xM-o3-ANl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ykA-he-lrC"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -231,7 +239,7 @@
         <!--Add Food-->
         <scene sceneID="6L5-vO-sPs">
             <objects>
-                <viewController title="Add Food" id="Jao-Jh-dLc" customClass="AddFoodGeneralVC" customModule="fruitable" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddFoodGeneralVC" title="Add Food" id="Jao-Jh-dLc" customClass="AddFoodGeneralVC" customModule="fruitable" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="By1-7M-6Kz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -368,13 +376,14 @@
                     <navigationItem key="navigationItem" title="Fruitable" id="VIM-IH-kfR">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="ALZ-yO-euD">
                             <connections>
-                                <segue destination="Jao-Jh-dLc" kind="show" id="hnf-Fq-9ES"/>
+                                <action selector="addFoodBtnPress:" destination="ifj-pd-Mf5" id="int-yI-xdZ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="iyv-Ut-4as" id="hZG-cv-oK0"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="FoodDetailVC" id="hMb-4l-uB8"/>
+                        <segue destination="Jao-Jh-dLc" kind="show" id="4Q3-nT-xHY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Po-Yu-6Cu" userLabel="First Responder" sceneMemberID="firstResponder"/>

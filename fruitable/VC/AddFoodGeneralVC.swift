@@ -9,11 +9,16 @@
 import UIKit
 import Photos
 
+protocol AddFoodGeneralVCDelegate{
+    func getFoodAdded(food: Food)
+}
+
 class AddFoodGeneralVC: UIViewController {
     
     @IBOutlet weak var tfName: UITextField!
     @IBOutlet weak var imgView: UIImageView!
     @IBOutlet weak var btnAdd: UIButton!
+    var delegate: AddFoodGeneralVCDelegate?
 
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
@@ -86,6 +91,10 @@ class AddFoodGeneralVC: UIViewController {
             
             print("the seconds", seconds)
             food.imageFilePath = seconds
+        }
+        
+        if let delegate = delegate{
+            delegate.getFoodAdded(food: food)
         }
         
         saveContext()
