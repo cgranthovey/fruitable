@@ -43,7 +43,6 @@ class FoodDetailVC: UIViewController {
                 print("test", error.localizedDescription)
             }
             
-
         } else{
             bgImageView.image = nil
         }
@@ -144,6 +143,13 @@ extension FoodDetailVC: UITableViewDataSource{
             saveData()
             foodSpecifics.remove(at: indexPath.row)
             tableView.deleteRows(at: [IndexPath(row: indexPath.row, section: 0)], with: .bottom)
+        }
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let vc = storyboard.instantiateViewController(withIdentifier: "AddFoodVC") as? AddFoodVC{
+            vc.passedFoodSpecific = foodSpecifics[indexPath.row]
+            self.navigationController?.pushViewController(vc, animated: true)
         }
     }
 }

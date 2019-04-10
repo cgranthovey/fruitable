@@ -30,9 +30,9 @@ class AddFoodVC: UIViewController {
 
         let tap = UITapGestureRecognizer(target: self, action: #selector(dropKB))
         self.view.addGestureRecognizer(tap)
-        if let name = passedFood?.name{
-            title = "Add \(name)"
-        }
+
+        setUpUI()
+
         
         tfCost.addTarget(self, action: #selector(textFieldDidChangeCurrency(_:)), for: .editingChanged)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardRise(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -53,6 +53,24 @@ class AddFoodVC: UIViewController {
         btnAdd.transform = .identity
     }
     
+    //MARK: - Set Up Page
+    func setUpUI(){
+        if let passed = passedFoodSpecific {
+            btnAdd.setTitle("Edit", for: .normal)
+            if let name = passedFoodSpecific?.name{
+                title = "Edit \(name)"
+            }
+            tfName.text = passed.name
+            tfCost.text = passed.cost
+            tfWeight.text = passed.weight
+        } else if let name = passedFood?.name{
+            title = "Add \(name)"
+        }
+        
+    }
+    
+    //MARK: - IBActions
+    
     @IBAction func addItemPress(_ sender: AnyObject){
         
         if tfName.text?.count == 0{
@@ -60,8 +78,14 @@ class AddFoodVC: UIViewController {
             return
         }
         
-        if let passedFood = passedFood{
-            if let cost = tfCost.text, let weight = tfWeight.text, let name = tfName.text{
+        if let cost = tfCost.text, let weight = tfWeight.text, let name = tfName.text{
+            if let passed = passedFoodSpecific{
+                passed.cost = cost
+                passed.weight = weight
+                passed.name = name
+                saveContext()
+                self.navigationController?.popViewController(animated: true)
+            } else if let passedFood = passedFood{
                 let food = FoodSpecific.init(context: context)
                 food.cost = cost
                 food.date = Date()
@@ -71,12 +95,6 @@ class AddFoodVC: UIViewController {
                 food.food = passedFood
                 saveContext()
                 self.navigationController?.popViewController(animated: true)
-            }
-        } else{
-            if let cost = tfCost.text, let weight = tfWeight.text, let name = tfName.text{
-                let food = Food.init(context: context)
-                food.name = name
-                saveContext()
             }
         }
 
